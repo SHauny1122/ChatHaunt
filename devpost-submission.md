@@ -26,7 +26,7 @@ OpenAI Codex; Unity 6.3 LTS (6000.3.11f1); C#; Universal Render Pipeline; Unity 
 
 ## E. Repository URL
 
-**PENDING — no remote repository was connected at the start of this audit.** Replace this line with the verified GitHub URL after publication or judge access is arranged.
+https://github.com/SHauny1122/ChatHaunt
 
 ## F. Explain how your project meets the main technology requirement
 
@@ -58,4 +58,4 @@ Twitch Chat → EventSub WebSocket → Node bridge → loopback HTTP → Unity r
 - **Screenshots:** dashboard with both connections, vote count/result, lights-off flashlight view, standing GhostWoman in the hallway.
 - **Codex session ID for the main build thread:** `01a18350-a99a-79b2-b152-fe8859ff9e96` (also confirm with `/status` in this thread).
 - **Official form choices for the submitter:** submitter type, country of residence, skill/knowledge impact rating, likelihood of using Codex again, and eligibility/age/sponsor statements. These are personal answers and are intentionally not filled here.
-- **Repository:** insert the verified URL and ensure it is public or, if private, share it with `testing@devpost.com` as the official form requires.
+- **Repository:** public GitHub repository verified at `https://github.com/SHauny1122/ChatHaunt`.
