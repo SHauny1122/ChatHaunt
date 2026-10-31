@@ -42,6 +42,8 @@ The streamer opens ChatHaunt in Unity and the local dashboard in a browser. They
 
 Clone the repository, run `npm ci` and `npm test` in its root, then open `unity/` in Unity 6000.3.11f1 and load `Assets/ChatHaunt/Scenes/ChatHauntHouse.unity`. Configure a local `.env` from `.env.example` using your own Twitch Public app and broadcaster-authorized `user:read:chat` token; never commit it. Run `npm start`, visit `http://127.0.0.1:3177`, and press Play in Unity. Wait for **Twitch: connected** and **Unity Game: Connected**. Send `!lights` in that channel to see the house stay dark, or click **Start Vote · 15s**, type `2` in chat, and watch GhostWoman appear with a scream when the vote closes. The dashboard also supports local simulated ballots for debugging; these are clearly separate from real Twitch messages.
 
+Final audit: a fresh anonymous clone of the public `main` branch completed `npm ci` and passed all seven Node tests. The scene, GhostWoman prefab, and three audio files were present in that clone. The running local dashboard returned HTTP 200 and reported Twitch connected. A fresh Unity import from that clone was not repeated after the recorded demo.
+
 ## Architecture and design notes
 
 Twitch Chat → EventSub WebSocket → Node bridge → loopback HTTP → Unity room/event registry. Node pushes status to the browser with Server-Sent Events. The dashboard is a control and monitoring surface, while the Unity Game view is the actual horror scene.
