@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChatHaunt — Live Twitch Control Dashboard</title>
+  <link rel="stylesheet" href="/app.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="dashboard">
+    <header class="topbar">
+      <div><p class="eyebrow">CHATHAUNT / LIVE DEMO</p><h1>Live Twitch Control Dashboard</h1></div>
+      <span class="connection" id="twitch-status">Twitch: connecting</span>
+    </header>
+
+    <p class="context">This page monitors chat and the local bridge. <strong>The horror game runs in the ChatHaunt Unity Editor.</strong> View the Game window to see each scare.</p>
+
+    <section class="status-grid" aria-label="Live system status">
+      <div class="panel metric"><span class="label">UNITY GAME</span><strong id="unity-status">Waiting for Unity</strong><small>ChatHauntHouse scene</small></div>
+      <div class="panel metric"><span class="label">ROOM LIGHTS</span><strong id="light-status">ON</strong><small>Reported by Unity's five room rigs</small></div>
+      <div class="panel metric"><span class="label">VOTE WINDOW</span><strong id="vote-status">Closed</strong><small id="vote-timer">Click Start Vote to let chat choose</small><button id="start-vote" type="button" disabled>Start Vote · 15s</button><small id="vote-action-status" role="status" aria-live="polite"></small></div>
+    </section>
+
+    <div class="columns">
+      <section class="panel" aria-labelledby="controls-heading">
+        <p class="eyebrow">WHAT VIEWERS CAN TYPE IN TWITCH CHAT</p>
+        <h2 id="controls-heading">Viewer controls</h2>
+        <div class="control"><code>!lights</code><span>Trigger the house blackout</span></div>
+        <p class="group-label">During an active vote</p>
+        <div class="control"><code>1</code><span>Vote for the blackout</span></div>
+        <div class="control"><code>2</code><span>Vote for standing hallway GhostWoman + scream</span></div>
+        <div class="control"><code>3</code><span>Vote for door-slam sound scare</span></div>
+        <p class="note">One current vote per Twitch viewer. The most votes wins when the window closes.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="vote-heading">
+        <p class="eyebrow">LIVE CHAT DECISION</p>
+        <h2 id="vote-heading">Vote count</h2>
+        <div class="count"><span>1 · Blackout</span><strong id="count-1">0</strong></div>
+        <div class="count"><span>2 · Hallway GhostWoman + scream</span><strong id="count-2">0</strong></div>
+        <div class="count"><span>3 · Door-slam sound</span><strong id="count-3">0</strong></div>
+        <p class="result" id="vote-result" aria-live="polite">No vote result yet.</p>
+      </section>
+    </div>
+
+    <footer><span>Last action</span><strong id="last-action">Waiting for chat.</strong><span class="footer-note">Twitch → EventSub → Node → localhost → Unity</span></footer>
+  </main>
+</body>
+</html>
